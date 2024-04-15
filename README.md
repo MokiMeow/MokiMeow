@@ -9,13 +9,13 @@
   
 - 🌱 I’m currently learning **MERN**
 
-- 🧑‍🎓 I’m an Undergraduate at **SLIIT**
+- 🧑‍🎓 I’m an Undergraduate at **BMSIT**
 
 - 💬 Ask me about **Java**
 
-- 📫 How to reach me **kaveen.dinethma@gmail.com**
+- 📫 How to reach me **smohith58@gmail.com**
   
-- ⚡ Fun fact **Call me as KD**
+- ⚡ Fun fact **I can explain a complex algorithm in under 10 lines of code (and make it rhyme, if you're lucky)**
 
 </td>
 <td width="50%" align="center">
