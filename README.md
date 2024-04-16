@@ -140,7 +140,7 @@
 <br>
   <a href="https://dev.to/mohith"><img src="https://img.shields.io/badge/dev.to-d5d5d5?style=for-the-badge&logo=devdotto&logoColor=0A0209"/></a>
   <a href="mailto:smohith58@gmail.com"><img src="https://img.shields.io/badge/Gmail-d5d5d5?style=for-the-badge&logo=gmail&logoColor=0A0209" /></a>
-  <a href="https://discord.com/channels/1074397112428679339/1074397112428679342"><img src="https://img.shields.io/badge/Discord-d5d5d5?style=for-the-badge&logo=discord&logoColor=0A0209" alt="Anmol#7140" >
+  <a href="https://discord.com/channels/1074397112428679339/1074397112428679342"><img src="https://img.shields.io/badge/Discord-d5d5d5?style=for-the-badge&logo=discord&logoColor=0A0209" alt="Mohith" >
   <a href="https://twitter.com/mohith50478695"><img src="https://img.shields.io/badge/Twitter-d5d5d5?style=for-the-badge&logo=x&logoColor=0A0209" alt="Mohith" ></a>
   
 </div>
