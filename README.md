@@ -59,53 +59,39 @@
   <summary>🏆 Achievements</summary>
   <br>
   
-  💜 Competition Zone
-  - #11 in GSSoC'23 with 100+ PRs.
-  - Won the Best Beginner Hack in [Ingenious Hackathon 5.0](https://ingenious-hackathon-4-d6bc.devfolio.co/projects).
-  - Finalist in Manthan, a nationwide competition organized by the _Ministry of Education Innovation Cell_.
-  - 3rd Rank in a _Avenues 21_ conducted by _SJMSOM_ and _IIT Bombay_ on the topic of Vigilance Awareness.
-  - Top 10 in the national event _Smartcase_ and got a chance to submit Research Proposal.
-  - 3rd Rank in the United Nations Awareness Quiz (national level) conducted by _Helping Hand International_, receiving a _30%_ scholarship in the UN Mentorship Program.
-  - 3rd Rank (263 contestants) in the MarQuest conducted by _MDI Gurgaon_ under Imperium 2022.
-  - Pre-final round in Start-O-Thon organized by _IEEE CIS Chapter - GHREC_, demonstrating the pitch deck with a prototype for the project _#DiversityMatters_.
-  - 3rd prize in _The Social Variable_ powered by _Connecting Dreams Foundations_ and _Amazon Web Services_ in a national competition comprising four rounds.
-  - Finalist in the designathon competition conducted by _Delhi Technological University_.
-  - 2nd Prize in Coding Treasure Hunt at college.
-  - 1st Prize in [chess](https://drive.google.com/file/d/1I8UIP4hw6ofD9RkdxILetRPi3j7gfcb2/view?usp=sharing) competition at college. I enjoy playing chess :)
-  - 1200 Rank in National Coding Competition _Accio-Wars_
-  - Finalist in Ad-O-Mania, conducted by IIM Ranchi.
+🏆 **Achievements**
 
-  💜 GitHub Zone
-  - _800+_ Stars, participated in _500+_ Discussions and _200+_ Merged PRs.
-  - Active participant in GitHub Community discussions, answering [35+ discussions](https://github.com/orgs/community/discussions?discussions_q=commenter%3AAnmol-Baranwal+is%3Aanswered).
-  - Consistently ranked as one of the _top 5_ Most Helpful members on the [GitHub Community](https://github.com/orgs/community/discussions) discussions for almost a month.
-  - Recognized as a Top Contributor of [LinksHub](https://www.linkshub.dev/contributors).
-  - Open source maintainer of [LinksHub](https://www.linkshub.dev/contributors) with 600+ Stars and 2000+ PRs on GitHub.
-  - Mentor of [WebXDAO](https://github.com/WebXDAO/WebXDAO.github.io) under GSSoC'23.
+🥇 Joined coding competitions and hackathons, taking home beginner awards.
 
-  💜 Proud Zone
-  - Part of the Super 30 Batch, availing a 100% scholarship for pursuing B.Tech CSE (3 students in the entire college)
-  - _6k+_ reputation on [Daily.dev](https://app.daily.dev/Anmol-Baranwal).
-  - Worked with 7+ international teams during the past 2 years.
-  - Gained more than 10k followers under 3 months on [dev.to/anmolbaranwal](https://dev.to/anmolbaranwal).
-  - Achieved 50 upvotes on my Product Hunt Launch.
-  
+🥈 Showcased skills in chess and coding events during college.
+
+🥉 Reached finals in design and marketing challenges, exploring diverse interests.
+
+💼 Engaged in quizzes and contests to broaden knowledge and skills.
+
+💜 **GitHub Zone**
+
+🌟 Started contributing to open source projects on GitHub, learning along the way.
+
+🌟 Participating in GitHub Community discussions, eager to help and learn.
+
+🌟 Exploring projects like WebXDAO and LinksHub to understand open source collaboration.
+
+💜 **Proud Zone**
+
+🎓 Enthusiastically pursuing B.Tech CSE, absorbing knowledge like a sponge.
+
+👥 Building connections with tech enthusiasts locally and globally.
+
+📈 Sharing experiences and projects on platforms like dev.to and Product Hunt.
+
+🏅 Proud member of the tech community, embracing challenges and learning every step of the way.
+
 </details>
 
 <br><br>
 
-## Latest Blog Posts  
 
-<a href="https://dev.to/anmolbaranwal"><img src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white"/></a><br>
-
-<!-- BLOG-POST-LIST:START -->
-- [21 AI Tools that are changing the World](https://dev.to/taipy/21-ai-tools-that-are-changing-the-world-1o54)
-- [Build a Full-Stack app using these React libraries and cloud backend.](https://dev.to/winglang/build-a-full-stack-app-using-these-react-libraries-and-cloud-backend-2o4b)
-- [17 Libraries You Should Know if You Build with React](https://dev.to/copilotkit/libraries-you-should-know-if-you-build-with-react-1807)
-- [All the tools I need to build a perfect AI app.](https://dev.to/taipy/all-the-tools-i-need-to-build-a-perfect-ai-app-2oeh)
-- [I&#39;m Building a Full-Stack App: Here Are the Libraries I&#39;m Going to Use...](https://dev.to/copilotkit/im-building-a-full-stack-app-here-are-the-libraries-im-going-to-use-51nk)
-- [Save your articles and reading list from DEV to GitHub - DevtoGitHub](https://dev.to/anmolbaranwal/save-your-articles-and-reading-list-from-dev-to-github-devtogithub-pje)
-<!-- BLOG-POST-LIST:END -->
 
 <br>
 
