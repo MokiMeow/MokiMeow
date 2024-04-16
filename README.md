@@ -29,28 +29,28 @@
 
 <div>
 
-<i>&nbsp; Building solutions with open source.</i><br><br>
+<i>&nbsp; Exploring open source, one line of code at a time.</i><br><br>
 
-👋 Hi! I'm Anmol Baranwal, a full-stack developer from India, super into Open Source, and working as a Technical writer for international brands.
+👋 Hi! I'm Sai Mohith, an aspiring full-stack developer from India with a keen interest in Open Source and a budding Technical writer.
 
-🔥 I have worked with more than 8 international teams like [Taipy](https://github.com/Avaiga/taipy), [CopilotKit](https://github.com/CopilotKit/CopilotKit), [Wing](https://github.com/winglang/wing), reaching an audience of over _100k_. If you need a technical writer, DM me on Twitter or LinkedIn.
+🌱 I'm currently learning and contributing to small-scale open source projects that catch my interest. I'm excited to grow and learn with each contribution I make.
 
-🔖 &nbsp; As a top author on [dev.to/anmolbaranwal](https://dev.to/anmolbaranwal), my content has been featured in prestigious communities like GitHub, resulting in a follower base of over _10k+_ within 3 months.
+🔖 &nbsp; As a new author on [dev.to/mohith] (https://dev.to/mohith), I'm starting to engage with the community and share my learning experiences in programming and open source contributions.
 
-🚀 &nbsp; I've established myself in the [Top 5%](https://github.com/anuraghazra/github-readme-stats?tab=readme-ov-file#github-stats-card) of GitHub by contributing to _40+_ projects with _200+_ Pull Requests, participating in _500+_ discussions, and earning a lot of reputation.
+🚀 &nbsp; I'm gradually building my presence on GitHub by contributing to projects and participating in discussions. I am motivated to learn from the community and enhance my coding skills through real-world practices.
 
-🎓 &nbsp; A 100% scholar in CS, I've played a crucial role as a maintainer & contributor of [LinksHub](https://github.com/rupali-codes/LinksHub) to turn it into an open source success story. I'm also a part of the core developer team at [Guidlify](https://github.com/Guidlify), connecting sponsors and tech community events.
+🎓 &nbsp; Pursuing my degree in Computer Science, I am learning the ropes of software development and open source contributions. I'm eager to apply my academic knowledge in practical scenarios.
 
-🤝 &nbsp; I have learned a lot about the Open Source ecosystem during the past 2 years so I'm guiding others to start their journey with open source in multiple communities on Discord & WhatsApp.
+🤝 &nbsp; I am active in several developer communities on Discord, where I seek guidance and share what I learn. It's a great space to grow and help others who are starting out just like me.
 
-☑️ &nbsp; I create helpful tips on open source, share resources, and a lot more to help you grow "1% every day" on [LinkedIn](https://www.linkedin.com/in/Anmol-Baranwal/) and [Twitter](https://twitter.com/Anmol_Codes). Be sure to follow me there for daily insightful tips!
+☑️ &nbsp; I share insights and resources on open source, programming tips, and much more to help peers grow alongside me. Follow me on  [Twitter](https://twitter.com/mohith50478695) for updates and shared learnings!
 
-🏆 &nbsp; I secured [11th Rank](https://gssoc.girlscript.tech/leaderboard) in GSSoC'23 (contributor) with 100+ PRs, did mentoring for [WebXDAO](https://github.com/WebXDAO/WebXDAO.github.io), and created content as a core team member (GSSoC'23 Team) for _200k_ audiences.
+🎯 &nbsp; I am currently working on personal projects and exploring open source tools that can help me develop my skills. Stay tuned to see what I build next!
 
-🎯 &nbsp; I built [designlyfe.tech](https://designlyfe.tech/) in Buildspace Season 4 and will continue working on more open source projects. Watch my journey of 6 weeks [here](https://buildspace.so/s4/demoday/designlyfe). You can also check my [open source resource](https://www.producthunt.com/posts/awesome-illustrations-for-projects) on Product Hunt that received _50+_ upvotes.
+😄 &nbsp; Besides coding, I enjoy participating in local hackathons, exploring new technologies, and brainstorming project ideas. Always learning and always growing!
 
-😄 &nbsp; Besides that, I participate in hackathons (won 7+ competitions), make side projects, brainstorm ideas, and keep learning new stuff :)
-  
+👀 &nbsp; Interested in following my journey into tech and open source? Check out my updates and projects right here on GitHub!
+
 </div>
 
 <br>
