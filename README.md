@@ -157,7 +157,7 @@
 <!--- -- GitHub Stats ------------------------------------------------------------------------------------------------------------------------------------ -->
 <!--- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
-  ![Anmol Baranwal GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Anmol-Baranwal&theme=tokyonight&theme=icegray&border_radius=8) 
+  ![Anmol Baranwal GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=MokiMeow&theme=tokyonight&theme=icegray&border_radius=8) 
 
 
 <hr>
