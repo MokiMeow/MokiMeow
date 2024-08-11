@@ -41,13 +41,9 @@
 
 🎓 &nbsp; Pursuing my degree in Computer Science, I am learning the ropes of software development and open source contributions. I'm eager to apply my academic knowledge in practical scenarios.
 
-🤝 &nbsp; I am active in several developer communities on Discord, where I seek guidance and share what I learn. It's a great space to grow and help others who are starting out just like me.
-
-☑️ &nbsp; I share insights and resources on open source, programming tips, and much more to help peers grow alongside me. Follow me on  [Twitter](https://twitter.com/mohith50478695) for updates and shared learnings!
-
 🎯 &nbsp; I am currently working on personal projects and exploring open source tools that can help me develop my skills. Stay tuned to see what I build next!
 
-😄 &nbsp; Besides coding, I enjoy participating in local hackathons, exploring new technologies, and brainstorming project ideas. Always learning and always growing!
+😄 &nbsp; Besides coding, I enjoy participating in hackathons, exploring new technologies, and brainstorming project ideas. Always learning and always growing!
 
 👀 &nbsp; Interested in following my journey into tech and open source? Check out my updates and projects right here on GitHub!
 
@@ -65,10 +61,6 @@
 
 🥈 Showcased skills in chess and coding events during college.
 
-🥉 Reached finals in design and marketing challenges, exploring diverse interests.
-
-💼 Engaged in quizzes and contests to broaden knowledge and skills.
-
 💜 **GitHub Zone**
 
 🌟 Started contributing to open source projects on GitHub, learning along the way.
@@ -82,8 +74,6 @@
 🎓 Enthusiastically pursuing B.Tech CSE, absorbing knowledge like a sponge.
 
 👥 Building connections with tech enthusiasts locally and globally.
-
-📈 Sharing experiences and projects on platforms like dev.to and Product Hunt.
 
 🏅 Proud member of the tech community, embracing challenges and learning every step of the way.
 
