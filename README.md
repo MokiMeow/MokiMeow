@@ -147,7 +147,7 @@
 <!--- -- GitHub Stats ------------------------------------------------------------------------------------------------------------------------------------ -->
 <!--- ------------------------------------------------------------------------------------------------------------------------------------------------------ -->
 
-  ![Mohith GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=MokiMeow&theme=dark&hide_border=true)
+  ![Mohith GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=MokiMeow&theme=dark&hide_border=true)
 
 
 <hr>
