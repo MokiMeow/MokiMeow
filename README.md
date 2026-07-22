@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://smohith.vercel.app/">Website</a> &middot;
-  <a href="https://dev.to/mohith">Writing</a> &middot;
+  <a href="https://www.linkedin.com/in/smohiths/">LinkedIn</a> &middot;
   <a href="https://github.com/MokiMeow?tab=repositories">All projects</a>
 </p>
 
