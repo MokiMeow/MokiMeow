@@ -18,6 +18,14 @@ Coding is my favorite kind of fun. Sometimes it becomes a serious developer tool
 
 I mostly bounce between **TypeScript, Python, React, and Next.js**. The tools change; making things does not. Away from the screen, I like green places, quiet time, and getting enough sleep.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/moki-buddy.gif">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/moki-buddy-light.gif">
+    <img src="./assets/moki-buddy.gif" alt="Moki, a small animated ASCII cat, sleeping, stretching, waving hello, purring, and curling up again." width="520">
+  </picture>
+</p>
+
 ### A few things I've made
 
 - [**OARS**](https://github.com/MokiMeow/OARS) keeps important actions behind rules and approvals, then leaves a receipt.
