@@ -22,7 +22,7 @@ I mostly bounce between **TypeScript, Python, React, and Next.js**. The tools ch
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/moki-buddy.gif">
     <source media="(prefers-color-scheme: light)" srcset="./assets/moki-buddy-light.gif">
-    <img src="./assets/moki-buddy.gif" alt="Moki, a small animated ASCII cat, sleeping, stretching, waving hello, purring, and curling up again." width="520">
+    <img src="./assets/moki-buddy.gif" alt="Moki, an animated ASCII cat, sleeping as a loaf, waking up, stretching, waving hello, purring little hearts, and loafing back down." width="520">
   </picture>
 </p>
 
