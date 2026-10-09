@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 """Moki — an animated ASCII cat for a GitHub profile README.
 
-Moki sleeps as a loaf, an ear twitches, he wakes, looks around, does a big
-arms-up stretch, waves a paw hello, purrs little hearts with his tail
-swishing, yawns, and loafs back down. Loops.
+Moki sleeps curled up, an ear twitches, he wakes, stretches, sits up, waves a
+paw hello, purrs with his tail flicking, yawns, and curls back down. Loops.
 
     python scripts/make_moki.py                  -> assets/moki-buddy.gif
     python scripts/make_moki.py --theme light    -> assets/moki-buddy-light.gif
 
-The art is pure ASCII on a fixed 19-column grid so it stays aligned in any
-monospace font. The face always lives on the same three rows and columns, and
-the tail is attached to the body rather than floating.
+The art is pure ASCII on a fixed 13-column grid so it stays aligned in any
+monospace font, and the tail is attached to the body rather than floating.
 Requires Pillow: ``python -m pip install Pillow``.
 """
 
@@ -31,8 +29,6 @@ THEMES = {
         "cat": (245, 222, 190),
         "cat_dim": (176, 152, 122),
         "eye": (126, 231, 176),
-        "nose": (255, 143, 171),
-        "heart": (255, 143, 171),
         "zzz": (122, 162, 247),
         "text": (125, 133, 144),
         "accent": (126, 231, 176),
@@ -44,8 +40,6 @@ THEMES = {
         "cat": (94, 71, 45),
         "cat_dim": (150, 124, 96),
         "eye": (26, 158, 108),
-        "nose": (214, 73, 113),
-        "heart": (214, 73, 113),
         "zzz": (84, 120, 214),
         "text": (110, 118, 129),
         "accent": (26, 158, 108),
@@ -53,135 +47,78 @@ THEMES = {
 }
 
 # ------------------------------------------------------------------- art ----
-# Everything is drawn on a 19-column body grid, centred on column 9 (the nose).
-# Rows 0-2 are always the head: ears, eyes, whiskers. Tails attach at the right
-# edge of the bottom rows, so the cat always reads as one connected creature.
-
-GRID_W = 19
-NOSE_COL = 9
-
-# The pair of eyes, five characters wide; `look` slides them a column.
-EYES_OPEN = "o   o"
-EYES_SHUT = "-   -"
-EYES_HAPPY = "^   ^"
-EYES_SQUEEZE = ">   <"
-EYES_WINK = "-   o"
+# Everything is drawn on a 13-column body grid. Tails attach at the right edge
+# of a body line, so the cat always reads as one connected creature.
 
 
-def _eyes(pair, look=0):
-    """Return the 9 characters between the cheeks; `look` is -1, 0 or +1."""
-    return " " * (2 + look) + pair + " " * (2 - look)
+def sitting(eyes="o o", mouth="w", tail="~~,", paws="(_) (_)", wave=None):
+    """Moki sitting upright.
 
-
-def _stamp(line, col, text):
-    """Overwrite `text` into `line` at `col`, growing the line if needed."""
-    line = line.ljust(col + len(text))
-    return line[:col] + text + line[col + len(text):]
-
-
-def head(eyes=EYES_OPEN, look=0, nose="^", ears="/\\_____/\\"):
-    return [
-        f"     {ears}     ",
-        f"    /{_eyes(eyes, look)}\\    ",
-        f"   ( ==  {nose}  == )   ",
+    `tail` attaches to the body's right side. `wave` raises the *left* foreleg
+    — paw, arm and shoulder are drawn as one connected limb, and it goes on the
+    opposite side from the tail so the silhouette stays balanced.
+    """
+    lines = [
+        "   /\\___/\\   ",
+        f"  (  {eyes}  )  ",
+        f"   >  {mouth}  <   ",
+        "  /|     |\\  ",
+        f" ( |     | ){tail}",
+        "  \\|_____|/  ",
+        f"   {paws}   ",
     ]
 
+    if wave == "up":
+        # paw(0,0) -> arm(1,1) -> arm(2,2) -> shoulder(2,3)
+        lines[0] = "o  /\\___/\\   "
+        lines[1] = f" \\(  {eyes}  )  "
+        # Remove the resting left paw (`>`) while that same paw is raised.
+        lines[2] = f"  |   {mouth}  <   "
+        lines[3] = "  \\|     |\\  "
+        lines[4] = f"   |     | ){tail}"
+        lines[5] = "   |_____|/  "
+    elif wave == "out":
+        # the same limb, swung down a notch
+        lines[1] = f"o (  {eyes}  )  "
+        lines[2] = f" \\|   {mouth}  <   "
+        lines[3] = "  \\|     |\\  "
+        lines[4] = f"   |     | ){tail}"
+        lines[5] = "   |_____|/  "
 
-def _with_tail(lines, tail):
-    """Attach a tail to the bottom-right of a body, growing up from the feet."""
-    shapes = {
-        "flat": ["~~,"],
-        "flick": ["~-,"],
-        "drift": ["-~,"],
-        "up": ["/", " _,"],
-        "high": ["/", " /", "  ,"],
-    }
-    base = len(lines[-1].rstrip())
-    for rows_up, text in enumerate(shapes[tail]):
-        row = len(lines) - 1 - rows_up
-        lines[row] = _stamp(lines[row].rstrip(), base, text)
     return lines
 
 
-def sitting(eyes=EYES_OPEN, look=0, nose="^", tail="flat", wave=None):
-    """Moki sitting upright, front paws together.
-
-    `wave` raises the *left* foreleg ("up" or "out"). The raised paw replaces
-    the resting one, and it goes on the opposite side from the tail so the
-    silhouette stays balanced.
-    """
-    lines = head(eyes, look, nose) + [
-        "    )         (    ",
-        "   (           )   ",
-        "  ( (  )   (  ) )  ",
-        " (__(__)___(__)__)",
-    ]
-
-    if wave:
-        lines[5] = "  (        (  ) )  "
-        lines[6] = " (_________(__)__)"
-        if wave == "up":
-            lines[0] = _stamp(lines[0], 2, "o")
-            lines[1] = _stamp(lines[1], 3, "\\")
-        else:
-            lines[1] = _stamp(lines[1], 2, "o-")
-
-    return _with_tail(lines, tail)
-
-
-def loaf(eyes=EYES_SHUT, nose="^", tail="flat", ears="/\\_____/\\"):
-    """Moki tucked into a loaf, asleep."""
-    lines = head(eyes, 0, nose, ears) + [
-        "  (_(__)___(__)_)",
-    ]
-    return _with_tail(lines, tail)
-
-
-def stretching(nose="o", tail="up", reach=True):
-    """Both front paws thrown up, body pulled a row taller — the big stretch."""
-    lines = head(EYES_SQUEEZE, 0, nose) + [
-        "    )         (    ",
-        "   (           )   ",
-        "   (           )   ",
-        "  (             )  ",
-        " (_______________)",
-    ]
-    if reach:
-        lines[0] = _stamp(_stamp(lines[0], 2, "o"), 16, "o")
-        lines[1] = _stamp(_stamp(lines[1], 3, "\\"), 15, "/")
-    else:
-        # halfway there: paws out to the sides
-        lines[1] = _stamp(_stamp(lines[1], 2, "o-"), 15, "-o")
-    return _with_tail(lines, tail)
-
-
-# Things that float above the head: (rows above the ears, column, text, colour)
-
-def zzz(stage):
-    """Sleep bubbles rising to the upper right."""
+def curled(eyes="-.-", mouth="w", tail="~~,"):
+    """Moki curled into a loaf, asleep."""
     return [
-        [(1, 15, "z", "zzz")],
-        [(1, 15, "z", "zzz"), (2, 17, "Z", "zzz")],
-        [(1, 15, "z", "zzz"), (2, 17, "Z", "zzz"), (3, 19, "z", "zzz")],
-        [(2, 17, "z", "zzz"), (3, 19, "Z", "zzz")],
-    ][stage]
+        "   /\\___/\\   ",
+        f"  (  {eyes}  )  ",
+        f"  (   {mouth}   ){tail}",
+        "  (_)___(_)  ",
+    ]
 
 
-def hearts(stage):
-    """Little hearts drifting up while he purrs."""
+def stretching(eyes="^ ^", mouth="o", tail="__,"):
+    """Front legs out, back arched — the long stretch."""
     return [
-        [(1, 15, "<3", "heart")],
-        [(2, 16, "<3", "heart")],
-        [(1, 2, "<3", "heart")],
-        [(2, 1, "<3", "heart"), (1, 15, "<3", "heart")],
-        [(2, 16, "<3", "heart")],
-        [(1, 2, "<3", "heart")],
+        "   /\\___/\\    ",
+        f"  (  {eyes}  )   ",
+        f"   >  {mouth}  <    ",
+        "  /|     |\\   ",
+        f" ( |     | )--{tail}",
+        "  \\|_____|/   ",
+        "  (__)  (__)  ",
+    ]
+
+
+def zzz_layer(stage):
+    """Sleep bubbles rising to the upper right. Three lines, always."""
+    return [
+        ["", "", "            z"],
+        ["", "          z", "            Z"],
+        ["        z", "          Z", "            z"],
+        ["      z", "        z", "          Z"],
     ][stage]
-
-
-def say(text, row=0, col=16):
-    """A word next to the head. Negative `rows above` means beside the body."""
-    return [(-row, col, text, "accent")]
 
 
 # ----------------------------------------------------------------- frames ---
@@ -190,67 +127,70 @@ def say(text, row=0, col=16):
 def build_frames():
     frames = []
 
-    def add(body, extras=(), ms=120, status="sleeping"):
-        # Body and extras are kept apart so the renderer can anchor the cat's
+    def add(body, sleep=None, ms=120, note=None, note_color="accent"):
+        # Body and bubbles are kept apart so the renderer can anchor the cat's
         # feet to a fixed baseline (it grows upward when it sits up) while the
         # bubbles float above whatever the current head height is.
-        frames.append({"body": body, "extras": list(extras), "ms": ms,
-                       "status": status})
+        frames.append({
+            "body": body,
+            "bubbles": zzz_layer(sleep) if sleep is not None else [],
+            "ms": ms,
+            "note": note,
+            "note_color": note_color,
+        })
 
-    # --- asleep: tail drifting, bubbles rising --------------------------
-    tails = ["flat", "flat", "flick", "flick", "flat", "flat", "drift", "drift"]
+    # --- asleep: slow breathing, tail drifting, bubbles rising ----------
+    tails = ["~~,", "~~,", "~-,", "~-,", "~~,", "~~,", "-~,", "-~,"]
     for i in range(8):
-        add(loaf(tail=tails[i]), zzz(i // 2), ms=280)
+        add(curled(eyes="-.-" if i % 4 < 2 else "- -", tail=tails[i]),
+            sleep=i // 2, ms=280)
 
     # --- an ear twitches ------------------------------------------------
-    add(loaf(ears="/\\_____/|"), zzz(3), ms=140)
-    add(loaf(), zzz(3), ms=120)
-    add(loaf(ears="/\\_____/|"), zzz(3), ms=140)
-    add(loaf(), ms=260)
+    add(curled(eyes="- -", tail="~~,"), sleep=3, ms=150)
+    add(["   /\\___/|   ", "  (  - -  )  ", "  (   w   )~~,", "  (_)___(_)  "],
+        sleep=3, ms=140)
+    add(["   |\\___/\\   ", "  (  - -  )  ", "  (   w   )~~,", "  (_)___(_)  "],
+        sleep=3, ms=140)
+    add(curled(eyes="- -"), sleep=3, ms=220)
 
-    # --- one eye opens, then both, a blink, a look around ---------------
-    add(loaf(eyes=EYES_WINK), ms=320, status="waking up")
-    add(loaf(eyes=EYES_OPEN), ms=240, status="waking up")
-    add(loaf(eyes=EYES_SHUT), ms=110, status="waking up")
-    add(loaf(eyes=EYES_OPEN, tail="flick"), ms=240, status="waking up")
-    add(sitting(tail="flat"), ms=220, status="waking up")
-    add(sitting(look=-1, tail="flick"), ms=300, status="waking up")
-    add(sitting(look=1, tail="flat"), ms=300, status="waking up")
-    add(sitting(tail="drift"), ms=200, status="waking up")
+    # --- one eye opens, then both, then a blink -------------------------
+    add(curled(eyes="- o"), ms=280)
+    add(curled(eyes="o o"), ms=220)
+    add(curled(eyes="- -"), ms=110)
+    add(curled(eyes="o o", tail="~-,"), ms=260)
 
-    # --- the big stretch ------------------------------------------------
-    add(stretching(reach=False, tail="flat"), ms=180, status="big stretch")
-    add(stretching(nose="o", tail="up"), say("mrrp", col=19), ms=260,
-        status="big stretch")
-    add(stretching(nose="O", tail="high"), say("mrrp", col=19), ms=420,
-        status="big stretch")
-    add(stretching(reach=False, tail="up"), ms=160, status="big stretch")
-    add(sitting(tail="flat"), ms=220, status="big stretch")
+    # --- the stretch ----------------------------------------------------
+    add(stretching(eyes="^ ^", mouth="o"), ms=220, note="mrrp",
+        note_color="text")
+    add(stretching(eyes="^ ^", mouth="O", tail="___,"), ms=300, note="mrrp",
+        note_color="text")
+    add(sitting(eyes="o o", tail="~-,"), ms=200)
 
-    # --- waves hello ----------------------------------------------------
-    wave_poses = ["out", "up", "out", "up", "out", "up", "out"]
-    wave_tails = ["flat", "up", "flat", "up", "flat", "up", "flat"]
-    for i in range(7):
-        add(sitting(eyes=EYES_HAPPY, tail=wave_tails[i], wave=wave_poses[i]),
-            say("hi!") if i > 0 else (), ms=170, status="saying hi")
-
-    # --- purring: hearts, tail swishing, happy blinks -------------------
-    purr_tails = ["flat", "up", "high", "up", "flat", "up"]
+    # --- sits up and waves ----------------------------------------------
+    wave_poses = ["up", "out", "up", "out", "up", "out"]
+    wave_tails = ["_/", "~~,", "\\_,", "~~,", "_/", "~~,"]
     for i in range(6):
-        add(sitting(eyes=EYES_HAPPY if i % 3 else EYES_SHUT,
-                    tail=purr_tails[i]),
-            hearts(i), ms=220, status="purring")
+        add(sitting(eyes="^ ^", tail=wave_tails[i], wave=wave_poses[i]),
+            ms=170, note="hi!" if i > 0 else None)
+
+    # --- purring, tail flicking, happy blinks ---------------------------
+    purr_tails = ["~~,", "_/", "~~,", "\\_,", "~~,", "_/"]
+    for i in range(6):
+        add(sitting(eyes="^ ^" if i % 2 == 0 else "- -", tail=purr_tails[i]),
+            ms=160, note="purrr" if i % 2 == 0 else "purr ",
+            note_color="text")
 
     # --- a yawn, then settling down -------------------------------------
-    add(sitting(eyes=EYES_SHUT, nose="o"), ms=220, status="sleepy again")
-    add(sitting(eyes=EYES_SQUEEZE, nose="O", tail="flick"), ms=420,
-        status="sleepy again")
-    add(sitting(eyes=EYES_SHUT), ms=220, status="sleepy again")
-    add(loaf(eyes=EYES_SHUT, tail="flick"), ms=320, status="sleepy again")
+    add(sitting(eyes="- -", mouth="o"), ms=240)
+    add(sitting(eyes="- -", mouth="O", tail="~-,"), ms=320, note="~yawn~",
+        note_color="text")
+    add(sitting(eyes="- -", mouth="w"), ms=200)
+    add(curled(eyes="- -"), ms=260)
 
     # --- asleep again ---------------------------------------------------
-    for i in range(3):
-        add(loaf(tail="flat" if i % 2 else "flick"), ms=300)
+    for i in range(4):
+        add(curled(eyes="-.-", tail="~~," if i % 2 else "~-,"),
+            sleep=min(i, 3), ms=320)
 
     return frames
 
@@ -284,22 +224,11 @@ def load_font(size, bold=True):
     return ImageFont.load_default()
 
 
-def body_colour(row, col, ch, palette):
-    """Pick a colour for one character of the cat, by where it sits."""
-    if row == 1 and 5 <= col <= 13 and ch in "o^-><":
-        return palette["eye"]
-    if row == 2 and ch == "=":
-        return palette["cat_dim"]            # whiskers
-    if row == 2 and col == NOSE_COL:
-        return palette["nose"]
-    return palette["cat"]
-
-
 def render(frames, palette, out_path, scale=3):
     """Render at `scale` then downsample — cheap anti-aliasing."""
     fs = 20 * scale
     font = load_font(fs)
-    small = load_font(int(12 * scale), bold=False)
+    small = load_font(int(11 * scale), bold=False)
 
     cw = round(font.getlength("M"))
     line_h = int(fs * 1.18)
@@ -309,10 +238,10 @@ def render(frames, palette, out_path, scale=3):
 
     # The cat's feet sit on a fixed baseline and the body grows *upward*, so
     # standing up looks like standing up rather than the whole cat sliding.
-    feet_y = height - pad - 86 * scale
+    feet_y = height - pad - 52 * scale
     # A fixed left origin (not per-frame centring) so the body never jitters
     # sideways when the tail changes width.
-    left = (width - GRID_W * cw) // 2
+    left = (width - 16 * cw) // 2
 
     images, durations = [], []
 
@@ -331,31 +260,38 @@ def render(frames, palette, out_path, scale=3):
             r = 5 * scale
             draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=dot)
 
-        title = "moki.cat"
-        draw.text(((width - small.getlength(title)) // 2, pad + 14 * scale),
-                  title, font=small, fill=palette["text"])
-
         body = frame["body"]
         body_top = feet_y - (len(body) - 1) * line_h
 
-        for row, line in enumerate(body):
+        def put(line, y, body_row=None):
             for col, ch in enumerate(line):
-                if ch != " ":
-                    draw.text((left + col * cw, body_top + row * line_h), ch,
-                              font=font,
-                              fill=body_colour(row, col, ch, palette))
+                if ch == " ":
+                    continue
+                x = left + col * cw
+                if ch in "zZ":
+                    colour = palette["zzz"]
+                elif body_row is not None and col >= 12:
+                    colour = palette["cat_dim"]      # the tail
+                elif body_row == 1 and 5 <= col <= 7 and ch in "o^":
+                    colour = palette["eye"]      # eyes only, not a raised paw
+                else:
+                    colour = palette["cat"]
+                draw.text((x, y), ch, font=font, fill=colour)
 
-        # Bubbles, hearts and words float relative to the ears, wherever the
-        # head currently is.
-        for rows_above, col, text, colour in frame["extras"]:
-            draw.text((left + col * cw, body_top - rows_above * line_h), text,
-                      font=font, fill=palette[colour])
+        # Bubbles float above the head, wherever the head currently is.
+        for i, line in enumerate(frame["bubbles"]):
+            put(line, body_top - (len(frame["bubbles"]) - i) * line_h)
 
-        # A tiny status line, like a prompt at the bottom of the window.
-        x, y = pad + 22 * scale, height - pad - 32 * scale
-        draw.text((x, y), "> moki is ", font=small, fill=palette["text"])
-        draw.text((x + small.getlength("> moki is "), y), frame["status"],
-                  font=small, fill=palette["accent"])
+        for row, line in enumerate(body):
+            put(line, body_top + row * line_h, body_row=row)
+
+        if frame["note"]:
+            draw.text((width - pad - 110 * scale, height - pad - 38 * scale),
+                      frame["note"], font=small,
+                      fill=palette[frame["note_color"]])
+
+        draw.text((pad + 22 * scale, height - pad - 30 * scale),
+                  "moki", font=small, fill=palette["text"])
 
         image = image.resize((width // scale, height // scale), Image.LANCZOS)
         images.append(image.convert("P", palette=Image.ADAPTIVE, colors=128))
