@@ -233,12 +233,12 @@ def render(frames, palette, out_path, scale=3):
     cw = round(font.getlength("M"))
     line_h = int(fs * 1.18)
 
-    width, height = 520 * scale, 360 * scale
-    pad = 16 * scale
+    width, height = 288 * scale, 214 * scale
+    pad = 8 * scale
 
     # The cat's feet sit on a fixed baseline and the body grows *upward*, so
     # standing up looks like standing up rather than the whole cat sliding.
-    feet_y = height - pad - 52 * scale
+    feet_y = height - pad - 34 * scale
     # A fixed left origin (not per-frame centring) so the body never jitters
     # sideways when the tail changes width.
     left = (width - 16 * cw) // 2
@@ -251,13 +251,13 @@ def render(frames, palette, out_path, scale=3):
 
         draw.rounded_rectangle(
             [pad, pad, width - pad, height - pad],
-            radius=16 * scale, fill=palette["card"],
+            radius=12 * scale, fill=palette["card"],
             outline=palette["border"], width=max(1, scale),
         )
 
         for i, dot in enumerate(((255, 95, 86), (255, 189, 46), (39, 201, 63))):
-            cx, cy = pad + (22 + i * 20) * scale, pad + 22 * scale
-            r = 5 * scale
+            cx, cy = pad + (15 + i * 15) * scale, pad + 15 * scale
+            r = 4 * scale
             draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=dot)
 
         body = frame["body"]
@@ -286,11 +286,11 @@ def render(frames, palette, out_path, scale=3):
             put(line, body_top + row * line_h, body_row=row)
 
         if frame["note"]:
-            draw.text((width - pad - 110 * scale, height - pad - 38 * scale),
+            draw.text((width - pad - 48 * scale, height - pad - 27 * scale),
                       frame["note"], font=small,
                       fill=palette[frame["note_color"]])
 
-        draw.text((pad + 22 * scale, height - pad - 30 * scale),
+        draw.text((pad + 15 * scale, height - pad - 23 * scale),
                   "moki", font=small, fill=palette["text"])
 
         image = image.resize((width // scale, height // scale), Image.LANCZOS)

@@ -28,6 +28,6 @@ I wrote a [kernel that boots into its own shell](https://github.com/MokiMeow/nut
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/moki-buddy.gif">
     <source media="(prefers-color-scheme: light)" srcset="./assets/moki-buddy-light.gif">
-    <img src="./assets/moki-buddy.gif" alt="Moki, a small animated ASCII cat, sleeping, stretching, waving hello, purring, and curling up again." width="520">
+    <img src="./assets/moki-buddy.gif" alt="Moki, a small animated ASCII cat, sleeping, stretching, waving hello, purring, and curling up again." width="288">
   </picture>
 </p>
