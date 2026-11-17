@@ -1,8 +1,4 @@
-<h1 align="center">Hey, I'm Mohith.</h1>
-
-<p align="center">
-  I build tools that let people set rules for AI agents and check what they did.
-</p>
+<h1 align="center">Hi, I'm Mohith.</h1>
 
 <p align="center">
   <a href="https://smohith.vercel.app/">Portfolio</a> &middot;
@@ -11,10 +7,8 @@
 </p>
 
 <p align="center">
-  <img src="./assets/profile-workbench.png" alt="Pixel-art workbench with a terminal showing a proposal, a check, and a hand reaching for a green approval button. The printer's receipt curls into a tunnel just big enough for a cat." width="100%" />
+  <img src="./assets/profile-paper-sea.png" alt="A scarlet paper boat floats beside a tall wave drawn in fine black lines." width="100%" />
 </p>
-
-Agents propose. Code checks. People decide. I like building systems that make each of those steps visible.
 
 ## Selected work
 
